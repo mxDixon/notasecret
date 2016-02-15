@@ -1,9 +1,4 @@
 
-def secret(num)
-  Math.sqrt(num) # not additive
-  #num # additive
-end
-
 def all_primes_additive?(num)
   primes = leading_primes(num)
 
@@ -14,10 +9,6 @@ def all_primes_additive?(num)
   end
 
   true
-end
-
-def additive?(x, y)
-  secret(x) + secret(y) == secret(x + y)
 end
 
 def leading_primes(num)
@@ -31,6 +22,15 @@ def leading_primes(num)
   end
 
   potential_primes
+end
+
+def additive?(x, y)
+  secret(x) + secret(y) == secret(x + y)
+end
+
+def secret(num)
+  Math.sqrt(num) # not additive
+  #num # additive
 end
 
 puts all_primes_additive?(ARGV[0])
